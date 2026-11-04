@@ -19,6 +19,9 @@ RACINE = Path(__file__).resolve().parent.parent / "site"
 FICHIER_MARCHE = RACINE / "data" / "marche.json"
 FICHIER_RAPPORTS = RACINE / "data" / "rapports.json"
 DOSSIER_RAPPORTS = RACINE / "rapports"
+FICHIER_ALERTES = RACINE / "data" / "alertes.json"
+DOSSIER_ALERTES = RACINE / "alertes"
+MAX_ALERTES = 20
 POINTS_SERIE = 60
 AGENT = "Mozilla/5.0 (compatible; ronde-marche/1.0)"
 
@@ -161,6 +164,20 @@ def indexer_rapports(dossier=DOSSIER_RAPPORTS):
     return rapports
 
 
+def indexer_alertes(dossier=DOSSIER_ALERTES, maximum=MAX_ALERTES):
+    alertes = []
+    for fichier in sorted(dossier.glob("*.txt"), reverse=True):
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}\.txt", fichier.name):
+            continue
+        lignes = [l.strip() for l in fichier.read_text("utf-8").splitlines() if l.strip()]
+        lignes = [l for l in lignes if l != "Alerte marchés" and not l.startswith("Cours pouvant")]
+        if lignes:
+            alertes.append({"date": fichier.stem, "lignes": lignes})
+        if len(alertes) == maximum:
+            break
+    return alertes
+
+
 def ecrire(chemin, contenu):
     chemin.parent.mkdir(parents=True, exist_ok=True)
     chemin.write_text(json.dumps(contenu, ensure_ascii=False, indent=1) + "\n", "utf-8")
@@ -170,6 +187,7 @@ def main():
     precedent = json.loads(FICHIER_MARCHE.read_text("utf-8")) if FICHIER_MARCHE.exists() else None
     donnees, reussites = collecter(precedent)
     ecrire(FICHIER_RAPPORTS, indexer_rapports())
+    ecrire(FICHIER_ALERTES, indexer_alertes())
     print(f"{reussites}/{len(INSTRUMENTS)} instruments récupérés")
     if reussites == 0:
         return 1  # on conserve le fichier existant et son horodatage

@@ -63,6 +63,12 @@ h3 { margin: 0; font-size: 1rem; font-weight: 600; }
 .barre.baisse { right: 50%; background: var(--baisse); border-radius: 4px 0 0 4px; }
 .echelle { font-size: .875rem; color: var(--encre-2); margin: .75rem 0 0; }
 
+#alertes { padding-block: 3rem; border-top: 1px solid var(--trait); }
+.alerte-bloc { display: grid; grid-template-columns: 11rem 1fr; gap: .25rem 1rem; padding-block: .6rem; border-top: 1px solid var(--trait); }
+.alerte-bloc:first-child { border-top: 0; padding-top: 0; }
+.alerte-bloc time { color: var(--encre-2); }
+.alerte-bloc p { margin: 0; }
+.vide-simple { margin: 0; color: var(--encre-2); }
 #marches { padding-block: 3rem; border-top: 1px solid var(--trait); }
 .groupe { margin-bottom: 2.25rem; }
 .defile { overflow-x: auto; }
@@ -109,6 +115,7 @@ footer p { margin: 0 0 .4rem; max-width: 42rem; }
   .rang { grid-template-columns: 1fr 4.5rem; row-gap: 0; }
   .piste { grid-column: 1 / -1; grid-row: 2; }
   .rang { margin-bottom: .45rem; }
+  .alerte-bloc { grid-template-columns: 1fr; }
   th:nth-child(1) { width: 50%; }
   th:nth-child(2) { width: 28%; }
   th:nth-child(3) { width: 22%; }

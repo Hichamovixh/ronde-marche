@@ -10,7 +10,7 @@
 <body>
 <header class="tete">
   <p class="marque">Ronde de marché</p>
-  <nav aria-label="Sections"><a href="#marches">Marchés</a><a href="#ronde">Dernière ronde</a></nav>
+  <nav aria-label="Sections"><a href="#alertes">Alertes</a><a href="#marches">Marchés</a><a href="#ronde">Dernière ronde</a></nav>
 </header>
 
 <main>
@@ -18,6 +18,11 @@
     <h1 id="phrase">Chargement des marchés…</h1>
     <p id="maj" class="note"></p>
     <div id="classement"></div>
+  </section>
+
+  <section id="alertes" aria-labelledby="titre-alertes">
+    <h2 id="titre-alertes">Dernières alertes</h2>
+    <div id="liste-alertes"></div>
   </section>
 
   <section id="marches" aria-labelledby="titre-marches">

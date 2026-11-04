@@ -64,6 +64,18 @@ class Collecte(unittest.TestCase):
         self.assertEqual([r["date"] for r in index], ["2026-11-16", "2026-11-09"])
         self.assertEqual(index[1]["titre"], "Ronde de marché – 9 novembre")
 
+    def test_index_alertes(self):
+        with tempfile.TemporaryDirectory() as t:
+            d = Path(t)
+            texte = "Alerte marchés\n\nOr : −3,0 % sur la journée (seuil 3 %)\n\nCours pouvant être différés.\n"
+            (d / "2026-11-04T15-33-00.txt").write_text(texte, "utf-8")
+            (d / "2026-11-05T09-00-00.txt").write_text(texte, "utf-8")
+            (d / "2026-11-03T09-00-00.txt").write_text(texte, "utf-8")
+            (d / "pirate.txt").write_text(texte, "utf-8")
+            index = collecte.indexer_alertes(d, maximum=2)
+        self.assertEqual([a["date"] for a in index], ["2026-11-05T09-00-00", "2026-11-04T15-33-00"])
+        self.assertEqual(index[0]["lignes"], ["Or : −3,0 % sur la journée (seuil 3 %)"])
+
 
 if __name__ == "__main__":
     unittest.main()

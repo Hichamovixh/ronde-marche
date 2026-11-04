@@ -170,5 +170,27 @@ async function chargerRapports() {
   afficherRapport(liste[0]);
 }
 
+async function chargerAlertes() {
+  const boite = $("liste-alertes");
+  let alertes = [];
+  try {
+    const r = await fetch("data/alertes.json", { cache: "no-cache" });
+    if (r.ok) alertes = await r.json();
+  } catch { /* traité comme une liste vide */ }
+  if (!alertes.length) {
+    boite.append(el("p", { className: "vide-simple", textContent: "Aucune alerte publiée pour l'instant." }));
+    return;
+  }
+  for (const a of alertes.slice(0, 10)) {
+    const [jour, heure] = a.date.split("T");
+    const [h, m] = heure.split("-");
+    const contenu = el("div");
+    for (const ligne of a.lignes) contenu.append(el("p", { textContent: ligne }));
+    boite.append(el("div", { className: "alerte-bloc" },
+      el("time", { textContent: `${dateCourte(jour)}, ${h} h ${m}` }), contenu));
+  }
+}
+
 chargerMarche();
+chargerAlertes();
 chargerRapports();
