@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ronde de marché</title>
+<meta name="description" content="Les marchés sur sept jours et la ronde d'analyse du lundi.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="tete">
+  <p class="marque">Ronde de marché</p>
+  <nav aria-label="Sections"><a href="#marches">Marchés</a><a href="#ronde">Dernière ronde</a></nav>
+</header>
+
+<main>
+  <section class="accroche" aria-labelledby="phrase">
+    <h1 id="phrase">Chargement des marchés…</h1>
+    <p id="maj" class="note"></p>
+    <div id="classement"></div>
+  </section>
+
+  <section id="marches" aria-labelledby="titre-marches">
+    <h2 id="titre-marches">Tous les marchés</h2>
+    <div id="groupes"></div>
+  </section>
+
+  <section id="ronde" aria-labelledby="titre-ronde">
+    <div class="ronde-tete">
+      <h2 id="titre-ronde">Dernière ronde</h2>
+      <label id="choix" hidden>Date de la ronde
+        <select id="archives"></select>
+      </label>
+    </div>
+    <article id="rapport" class="rapport"></article>
+  </section>
+</main>
+
+<footer>
+  <p>Information générale, sans conseil en investissement personnalisé. Tout investissement comporte un risque de perte en capital.</p>
+  <p>Les cours peuvent être différés ou incomplets : vérifie-les auprès de ton courtier avant d'agir.</p>
+</footer>
+<div id="infobulle" role="status" hidden></div>
+<script src="vendor/marked.umd.js"></script>
+<script src="vendor/purify.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

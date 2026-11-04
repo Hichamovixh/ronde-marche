@@ -1,0 +1,118 @@
+@font-face { font-family: "Schibsted Grotesk"; src: url("vendor/schibsted-grotesk-latin-wght-normal.woff2") format("woff2"); font-weight: 400 900; font-display: swap; }
+@font-face { font-family: "Source Serif 4"; src: url("vendor/source-serif-4-latin-wght-normal.woff2") format("woff2"); font-weight: 200 900; font-display: swap; }
+
+:root {
+  --fond: #E7EDF2;
+  --surface: #F6F8FA;
+  --encre: #16263A;
+  --encre-2: #4E5F75;
+  --trait: #C5D0DB;
+  --hausse: #1F5FBF;
+  --baisse: #C2571A;
+  --avert: #7A4B00;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #111B29;
+    --surface: #18243A;
+    --encre: #E6ECF3;
+    --encre-2: #A3B2C5;
+    --trait: #2F4059;
+    --hausse: #5A90DC;
+    --baisse: #D0783C;
+    --avert: #F2C879;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--fond); color: var(--encre);
+  font: 400 1rem/1.5 "Schibsted Grotesk", system-ui, sans-serif;
+}
+a { color: inherit; text-underline-offset: .2em; }
+:focus-visible { outline: 3px solid var(--hausse); outline-offset: 2px; }
+
+.tete, main, footer { max-width: 68rem; margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2.5rem); }
+.tete { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-block: 1.25rem; }
+.marque { margin: 0; font-weight: 700; }
+.marque, .tete nav a { white-space: nowrap; }
+.tete nav { display: flex; gap: 1.25rem; color: var(--encre-2); }
+
+.accroche { padding-block: clamp(2rem, 7vw, 5rem) 3.5rem; }
+h1 {
+  margin: 0; max-width: 21em; font-weight: 600; letter-spacing: -.025em; line-height: 1.08;
+  font-size: clamp(2rem, 5.4vw, 3.9rem); text-wrap: balance;
+}
+h2 { margin: 0 0 1.25rem; font-size: 1.6rem; line-height: 1.2; letter-spacing: -.015em; font-weight: 600; }
+h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+.note { margin: 1rem 0 0; color: var(--encre-2); }
+.alerte { color: var(--avert); font-weight: 500; }
+
+/* Classement : une ligne par marché, barre partant d'un axe central commun. */
+#classement { margin-top: 2.75rem; display: grid; row-gap: .15rem; }
+.rang { display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr 4.75rem; gap: .9rem; align-items: center; min-height: 1.85rem; }
+.rang-nom { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rang-val { text-align: right; font-weight: 600; }
+.piste { position: relative; height: 1rem; }
+.piste::before { content: ""; position: absolute; left: 50%; top: -.2rem; bottom: -.2rem; width: 1px; background: var(--trait); }
+.barre { position: absolute; top: .2rem; height: .6rem; }
+.barre.hausse { left: 50%; background: var(--hausse); border-radius: 0 4px 4px 0; }
+.barre.baisse { right: 50%; background: var(--baisse); border-radius: 4px 0 0 4px; }
+.echelle { font-size: .875rem; color: var(--encre-2); margin: .75rem 0 0; }
+
+#marches { padding-block: 3rem; border-top: 1px solid var(--trait); }
+.groupe { margin-bottom: 2.25rem; }
+.defile { overflow-x: auto; }
+table { width: 100%; table-layout: fixed; border-collapse: collapse; margin-top: .4rem; }
+th:nth-child(1) { width: 36%; }
+th:nth-child(2) { width: 18%; }
+th:nth-child(3) { width: 14%; }
+th:nth-child(4) { width: 14%; }
+.sous { display: none; color: var(--encre-2); font-size: .8125rem; font-weight: 400; }
+caption { text-align: left; font-weight: 600; padding-bottom: .4rem; }
+th, td { padding: .5rem .75rem .5rem 0; text-align: right; border-top: 1px solid var(--trait); font-weight: 400; }
+thead th { border-top: 0; color: var(--encre-2); font-size: .875rem; }
+th:first-child, td:first-child { text-align: left; }
+tbody th { text-align: left; }
+td:last-child, th:last-child { padding-right: 0; width: 9rem; }
+.hausse-t { color: var(--hausse); font-weight: 600; }
+.baisse-t { color: var(--baisse); font-weight: 600; }
+.date { color: var(--encre-2); white-space: nowrap; }
+.ancien { display: block; color: var(--avert); font-size: .8125rem; }
+svg.courbe { display: block; width: 100%; height: 2rem; overflow: visible; touch-action: none; }
+svg.courbe path { fill: none; stroke: var(--encre-2); stroke-width: 1.75; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+svg.courbe circle { fill: var(--encre); }
+#infobulle { position: fixed; z-index: 5; pointer-events: none; padding: .3rem .55rem; border-radius: 4px; font-size: .875rem; background: var(--encre); color: var(--fond); white-space: nowrap; }
+
+#ronde { padding-block: 3rem 4rem; border-top: 1px solid var(--trait); }
+.ronde-tete { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: baseline; }
+label { color: var(--encre-2); }
+select { font: inherit; color: var(--encre); background: var(--surface); border: 1px solid var(--trait); border-radius: 4px; padding: .3rem .5rem; margin-left: .4rem; }
+.rapport { margin-top: 1.25rem; font: 400 1.125rem/1.65 "Source Serif 4", Georgia, serif; }
+.rapport > * { max-width: 42rem; }
+.rapport h1 { font: 600 clamp(1.6rem, 3.5vw, 2.25rem)/1.15 "Schibsted Grotesk", sans-serif; letter-spacing: -.02em; margin-bottom: 1rem; }
+.rapport h2 { font-family: "Schibsted Grotesk", sans-serif; margin: 2.5rem 0 .75rem; }
+.rapport h3 { font: 600 1.125rem/1.3 "Schibsted Grotesk", sans-serif; margin: 1.75rem 0 .5rem; }
+.rapport table { display: block; table-layout: auto; max-width: 100%; overflow-x: auto; min-width: 0; font: 400 .9375rem/1.4 "Schibsted Grotesk", sans-serif; margin-block: 1rem; }
+.rapport th, .rapport td { text-align: left; padding: .45rem .9rem .45rem 0; width: auto; }
+.rapport th { font-weight: 600; width: auto !important; }
+.rapport td:last-child, .rapport th:last-child { width: auto; }
+.vide { font: 400 1rem/1.5 "Schibsted Grotesk", sans-serif; color: var(--encre-2); }
+
+footer { padding-block: 0 3rem; color: var(--encre-2); font-size: .9375rem; }
+footer p { margin: 0 0 .4rem; max-width: 42rem; }
+
+@media (max-width: 34rem) {
+  .rang { grid-template-columns: 1fr 4.5rem; row-gap: 0; }
+  .piste { grid-column: 1 / -1; grid-row: 2; }
+  .rang { margin-bottom: .45rem; }
+  th:nth-child(1) { width: 50%; }
+  th:nth-child(2) { width: 28%; }
+  th:nth-child(3) { width: 22%; }
+  th:nth-child(n+4), td:nth-child(n+4) { display: none; }
+  td:nth-child(3), th:nth-child(3) { padding-right: 0; }
+  .sous { display: block; }
+}
