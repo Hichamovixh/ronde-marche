@@ -36,7 +36,7 @@ a { color: inherit; text-underline-offset: .2em; }
 :focus-visible { outline: 3px solid var(--hausse); outline-offset: 2px; }
 
 .tete, main, footer { max-width: 68rem; margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2.5rem); }
-.tete { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-block: 1.25rem; }
+.tete { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem; padding-block: 1.25rem; }
 .marque { margin: 0; font-weight: 700; }
 .marque, .tete nav a { white-space: nowrap; }
 .tete nav { display: flex; gap: 1.25rem; color: var(--encre-2); }
