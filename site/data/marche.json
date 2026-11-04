@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-04T14:37:11+00:00",
+ "maj": "2026-11-04T14:51:43+00:00",
  "instruments": [
   {
    "id": "sp500",
@@ -7,9 +7,9 @@
    "groupe": "Actions",
    "unite": "pts",
    "mode_variation": "pct",
-   "valeur": 7671.7099609375,
+   "valeur": 7693.60986328125,
    "date": "2026-11-04",
-   "variation_7j": -0.93,
+   "variation_7j": -0.65,
    "serie": [
     [
      "2026-08-12",
@@ -249,7 +249,7 @@
     ],
     [
      "2026-11-04",
-     7671.71
+     7693.6099
     ]
    ],
    "source": "Yahoo Finance",
@@ -261,9 +261,9 @@
    "groupe": "Actions",
    "unite": "pts",
    "mode_variation": "pct",
-   "valeur": 25713.58203125,
+   "valeur": 25887.361328125,
    "date": "2026-11-04",
-   "variation_7j": -3.15,
+   "variation_7j": -2.5,
    "serie": [
     [
      "2026-08-12",
@@ -503,7 +503,7 @@
     ],
     [
      "2026-11-04",
-     25713.582
+     25887.3613
     ]
    ],
    "source": "Yahoo Finance",
@@ -515,9 +515,9 @@
    "groupe": "Actions",
    "unite": "pts",
    "mode_variation": "pct",
-   "valeur": 8189.6298828125,
+   "valeur": 8198.580078125,
    "date": "2026-11-04",
-   "variation_7j": 3.84,
+   "variation_7j": 3.95,
    "serie": [
     [
      "2026-08-13",
@@ -757,7 +757,7 @@
     ],
     [
      "2026-11-04",
-     8189.6299
+     8198.5801
     ]
    ],
    "source": "Yahoo Finance",
@@ -769,9 +769,9 @@
    "groupe": "Actions",
    "unite": "pts",
    "mode_variation": "pct",
-   "valeur": 6267.83984375,
+   "valeur": 6268.669921875,
    "date": "2026-11-04",
-   "variation_7j": 1.62,
+   "variation_7j": 1.64,
    "serie": [
     [
      "2026-08-13",
@@ -1011,7 +1011,7 @@
     ],
     [
      "2026-11-04",
-     6267.8398
+     6268.6699
     ]
    ],
    "source": "Yahoo Finance",
@@ -1277,9 +1277,9 @@
    "groupe": "Actions",
    "unite": "$",
    "mode_variation": "pct",
-   "valeur": 61.79999923706055,
+   "valeur": 62.03499984741211,
    "date": "2026-11-04",
-   "variation_7j": -2.71,
+   "variation_7j": -2.34,
    "serie": [
     [
      "2026-08-12",
@@ -1519,7 +1519,7 @@
     ],
     [
      "2026-11-04",
-     61.8
+     62.035
     ]
    ],
    "source": "Yahoo Finance",
@@ -1531,9 +1531,9 @@
    "groupe": "Taux",
    "unite": "%",
    "mode_variation": "pts",
-   "valeur": 4.921000003814697,
+   "valeur": 4.925000190734863,
    "date": "2026-11-04",
-   "variation_7j": -0.124,
+   "variation_7j": -0.12,
    "serie": [
     [
      "2026-08-12",
@@ -1773,7 +1773,7 @@
     ],
     [
      "2026-11-04",
-     4.921
+     4.925
     ]
    ],
    "source": "Yahoo Finance",
@@ -2031,7 +2031,7 @@
     ]
    ],
    "source": "Banque centrale européenne",
-   "statut": "ancien"
+   "statut": "ok"
   },
   {
    "id": "bce",
@@ -2293,9 +2293,9 @@
    "groupe": "Matières premières",
    "unite": "$",
    "mode_variation": "pct",
-   "valeur": 4045.5,
+   "valeur": 4056.800048828125,
    "date": "2026-11-04",
-   "variation_7j": -0.15,
+   "variation_7j": 0.13,
    "serie": [
     [
      "2026-08-12",
@@ -2535,7 +2535,7 @@
     ],
     [
      "2026-11-04",
-     4045.5
+     4056.8
     ]
    ],
    "source": "Yahoo Finance",
@@ -2547,9 +2547,9 @@
    "groupe": "Matières premières",
    "unite": "$",
    "mode_variation": "pct",
-   "valeur": 51.92499923706055,
+   "valeur": 52.20000076293945,
    "date": "2026-11-04",
-   "variation_7j": -2.87,
+   "variation_7j": -2.35,
    "serie": [
     [
      "2026-08-12",
@@ -2789,7 +2789,7 @@
     ],
     [
      "2026-11-04",
-     51.925
+     52.2
     ]
    ],
    "source": "Yahoo Finance",
@@ -2801,9 +2801,9 @@
    "groupe": "Matières premières",
    "unite": "$",
    "mode_variation": "pct",
-   "valeur": 100.48999786376953,
+   "valeur": 100.66999816894531,
    "date": "2026-11-04",
-   "variation_7j": -12.86,
+   "variation_7j": -12.7,
    "serie": [
     [
      "2026-08-12",
@@ -3043,7 +3043,7 @@
     ],
     [
      "2026-11-04",
-     100.49
+     100.67
     ]
    ],
    "source": "Yahoo Finance",
@@ -3309,9 +3309,9 @@
    "groupe": "Crypto",
    "unite": "€",
    "mode_variation": "pct",
-   "valeur": 69753.921875,
+   "valeur": 70557.453125,
    "date": "2026-11-04",
-   "variation_7j": -4.25,
+   "variation_7j": -3.15,
    "serie": [
     [
      "2026-09-06",
@@ -3551,7 +3551,7 @@
     ],
     [
      "2026-11-04",
-     69753.9219
+     70557.4531
     ]
    ],
    "source": "Yahoo Finance",
@@ -3563,9 +3563,9 @@
    "groupe": "Crypto",
    "unite": "€",
    "mode_variation": "pct",
-   "valeur": 2060.969970703125,
+   "valeur": 2112.60009765625,
    "date": "2026-11-04",
-   "variation_7j": -2.48,
+   "variation_7j": -0.04,
    "serie": [
     [
      "2026-09-06",
@@ -3805,7 +3805,7 @@
     ],
     [
      "2026-11-04",
-     2060.97
+     2112.6001
     ]
    ],
    "source": "Yahoo Finance",
